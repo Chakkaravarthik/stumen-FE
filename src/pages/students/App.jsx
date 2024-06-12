@@ -1,7 +1,8 @@
 import { useEffect , useState} from 'react';
-import './App.css'
+import '../students/App.css'
 import StudentList from './studentList'
-import { getallstu } from './apis';
+import { getallstu } from '../../apis/students';
+
 
 function App() {
   
@@ -25,4 +26,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
