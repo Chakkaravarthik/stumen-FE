@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {usersignup} from '../../apis/auth.js';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +19,8 @@ const Register = () => {
       [name]: value
     });
   };
-
+ 
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -29,10 +30,17 @@ const Register = () => {
       } else {
         setMessage(response.msg);
       }
+      navigate('/login');
     } catch (error) {
       setMessage(`Error 2: ${error.message}`);
     }
   };
+
+  const isAuthenticated = Boolean(localStorage.getItem('isAuthenticated'));
+  
+  if(isAuthenticated){
+    return <Navigate to='/' />
+  }
 
   return (
     <div className="container mt-5">
@@ -84,9 +92,9 @@ const Register = () => {
             onChange={handleChange}
             required
           >
-            <option value="user">User</option>
+            <option value="students">Students</option>
+            <option value="teachers">Teachers</option>
             <option value="admin">Admin</option>
-            <option value="editor">Editor</option>
           </select>
         </div>
         <button type="submit" className="btn btn-primary">Register</button>

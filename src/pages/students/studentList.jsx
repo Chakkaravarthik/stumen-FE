@@ -1,5 +1,7 @@
 // src/StudentList.js
 
+import { Link } from "react-router-dom";
+
 // eslint-disable-next-line react/prop-types
 const StudentList = ({ students = [] }) => {
     return (
@@ -22,11 +24,12 @@ const StudentList = ({ students = [] }) => {
                 <td>{student.age}</td>
                 <td>{student.gender}</td>
                 <td>{student.id}</td>
-                <td>{student.teacherId}</td>
+                <td>{student.teacherid}</td>
               </tr>
             ))}
           </tbody>
         </table>
+        <Link to='/'>Home</Link>
       </div>
     );
   };
