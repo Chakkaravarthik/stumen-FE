@@ -21,7 +21,8 @@ const TeachersList = ({ teachers = [] }) => {
               <tr key={teacher.id}>
                 <td>{teacher.name}</td>
                 <td>{teacher.batch}</td>
-                <td>{teacher.studentId}</td>
+                <td>{teacher.studentsid}</td>
+                <td>{teacher.id}</td>
               </tr>
             ))}
           </tbody>

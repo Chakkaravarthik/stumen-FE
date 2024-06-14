@@ -23,10 +23,11 @@ const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Here you can handle form submission, e.g., sending data to a server.
-    console.log(formData);
+   
     const data = await usersignin(formData);
     if(data.code===1){
       localStorage.setItem('isAuthenticated', true);
+      localStorage.setItem('user_details', data.token)
       navigate('/')
     }if(data.code===0){
       alert('credentials wrong')
