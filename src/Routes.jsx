@@ -5,6 +5,7 @@ import Login from "./pages/login/login.jsx";
 import Protectedroutes from "./protectedroutes.jsx";
 import TeachersApp from "./pages/teachers/app.jsx";
 import Home from "./pages/home/home.jsx";
+import VerifyAccount from "./pages/verify_account/VerifyAccount.jsx";
 
 const AppRoutes = ()=>{
     return(
@@ -13,6 +14,7 @@ const AppRoutes = ()=>{
                 <Route path='/' element={<Home />}  />  
                 <Route path="/students" element={<Protectedroutes component={<StudentListapp />} />}/>
                 <Route path="/teachers" element={<Protectedroutes component={<TeachersApp />} />}/>
+                <Route path="/verify-user" element={<VerifyAccount />} />
                 <Route path='/register' element={<Register />}  />
                 <Route path='/login' element={<Login />}  />           
             </Routes>

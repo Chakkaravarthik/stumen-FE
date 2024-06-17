@@ -20,7 +20,7 @@ const usersignup = async (userdata) => {
         console.log('usersignup ok');
         return result;
     } catch (e) {
-        console.log(e);
+        console.log(e.message);
         return { error: e.message };
     }
 };
@@ -41,4 +41,21 @@ const usersignin = async (userdata) =>{
     }
 }
 
-export {usersignup , usersignin};
+
+
+const verifyAccount = async (token)=>{
+    try{
+        const res = await fetch(`${URL}/verify-user`, { method: "POST",
+            body: JSON.stringify({token}),
+            headers: {
+                "Content-Type": "application/json;charset=utf-8",
+            },
+        })
+        return await res.json();
+    }catch(e){
+        console.log(e);
+        return {error : e.message};
+    }
+}
+
+export {usersignup , usersignin , verifyAccount};

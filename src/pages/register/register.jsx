@@ -7,7 +7,7 @@ const Register = () => {
     name: '',
     email: '',
     password: '',
-    roles: 'user' // Default role
+    role: '' // Default role
   });
 
   const [message, setMessage] = useState('');
@@ -83,7 +83,7 @@ const Register = () => {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="roles" className="form-label">Roles</label>
+          <label htmlFor="roles" className="form-label">Role</label>
           <select
             className="form-control"
             id="role"
@@ -92,8 +92,8 @@ const Register = () => {
             onChange={handleChange}
             required
           >
-            <option value="students">Students</option>
-            <option value="teachers">Teachers</option>
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
             <option value="admin">Admin</option>
           </select>
         </div>
