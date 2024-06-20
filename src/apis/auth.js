@@ -1,4 +1,4 @@
-const URL = VITE_LOCAL_URL;
+const URL = process.env.VITE_LOCAL_URL;
 
 const usersignup = async (userdata) => {
     try {
