@@ -1,4 +1,4 @@
-const URL = 'http://localhost:7000';
+const URL = VITE_LOCAL_URL;
 
 const usersignup = async (userdata) => {
     try {
